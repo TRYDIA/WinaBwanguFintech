@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wina Bwangu - FinTech Operations Prototype</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Wina Bwangu FinTech</a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div id="site-menu" class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#transaction-section" class="active">New Transaction</a></li>
+        <li><a href="dashboard.html">Agent Dashboard</a></li>
+      </ul>
+      <div class="nav-contact">
+        <a class="icon-link" href="tel:+27000000000" aria-label="Call Wina Bwangu"><i class="fas fa-phone"></i></a>
+        <a class="icon-link" href="mailto:info@example.com" aria-label="Email Wina Bwangu"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </nav>
+  <div class="menu-backdrop" data-menu-close></div>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container"></div>
+
+  <main class="container">
+    <!-- Transaction Entry Form -->
+    <section id="transaction-section" class="card">
+      <h2>Record Mobile Booth Transaction</h2>
+      <form id="transactionForm">
+        
+        <div class="form-group">
+          <label for="transactionId">Transaction ID</label>
+          <input type="text" id="transactionId" readonly placeholder="Auto-generating...">
+        </div>
+
+        <div class="form-group">
+          <label for="boothSelect">Select Mobile Booth</label>
+          <select id="boothSelect" required>
+            <option value="">-- Choose Mobile Booth --</option>
+            <option value="Wina1">Wina1</option>
+            <option value="Wina2">Wina2</option>
+            <option value="Wina3">Wina3</option>
+            <option value="Wina4">Wina4</option>
+            <option value="Wina5">Wina5</option>
+            <option value="Wina6">Wina6</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="locationInput">Location</label>
+          <input type="text" id="locationInput" readonly placeholder="Location will appear here...">
+        </div>
+
+        <div class="form-group">
+          <label for="serviceSelect">Select Service</label>
+          <select id="serviceSelect" required disabled>
+            <option value="">-- Select Booth First --</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="revenueRate">Revenue Per Kwacha (ZMW)</label>
+          <input type="text" id="revenueRate" readonly placeholder="0.00">
+        </div>
+
+        <div class="form-group">
+          <label for="remainingCredit">Amount Remaining (ZMW)</label>
+          <input type="text" id="remainingCredit" readonly placeholder="0.00">
+        </div>
+
+        <div class="form-group">
+          <label for="transactionAmount">Transaction Amount (ZMW)</label>
+          <input type="number" id="transactionAmount" min="1" step="0.01" placeholder="e.g. 500" required>
+        </div>
+
+        <div class="form-group">
+          <label for="taxAmount">Tax Amount (5%)</label>
+          <input type="text" id="taxAmount" readonly placeholder="0.00">
+        </div>
+
+        <div class="form-group">
+          <label for="amountAfterTax">Amount After Tax (ZMW)</label>
+          <input type="text" id="amountAfterTax" readonly placeholder="0.00">
+        </div>
+
+        <button type="submit" class="btn-primary">Execute Transaction</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <h2>Wina Bwangu FinTech</h2>
+      <p>Mobile booth transaction tools for fast, clear service tracking.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Contact</h3>
+      <div class="footer-icon-row">
+        <a class="icon-link" href="tel:+27000000000" aria-label="Call Wina Bwangu"><i class="fas fa-phone"></i></a><br/>
+        <a class="icon-link" href="mailto:info@example.com" aria-label="Email Wina Bwangu"><i class="fas fa-envelope"></i></a>
+        <a class="icon-link" href="https://wa.me/27000000000" aria-label="Message Wina Bwangu on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h3>Social</h3>
+      <div class="footer-icon-row">
+        <a class="icon-link" href="https://web.facebook.com/?_rdc=1&_rdr#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a class="icon-link" href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a class="icon-link" href="https://www.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
